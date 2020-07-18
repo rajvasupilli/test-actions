@@ -1,5 +1,5 @@
 # This workflow will build and push a new container image to Amazon ECR,
-# and then will deploy a new task definition to Amazon ECS when a release is created
+# and then will deploy a new task definition to Amazon ECS, when a release is created
 #
 # To use this workflow, you will need to complete the following set-up steps:
 #
@@ -54,7 +54,7 @@ jobs:
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: testgithubactions
+        ECR_REPOSITORY: actions
         IMAGE_TAG: latest
       run: |
         # Build a docker container and
@@ -63,19 +63,18 @@ jobs:
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
-
     - name: Fill in the new image ID in the Amazon ECS task definition
       id: task-def
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
-        task-definition: jenkins-task-def
-        container-name: jenkins-container
-        image: 797526292966.dkr.ecr.us-east-1.amazonaws.com/testgithubactions:latest
+        task-definition: ecs-task-definition.json
+        container-name: jenkins
+        image: ${{ steps.build-image.outputs.image }}
 
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: jenkins-service
+        service: jenkins
         cluster: jenkins-cluster
         wait-for-service-stability: true
