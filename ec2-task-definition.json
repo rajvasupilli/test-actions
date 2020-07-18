@@ -4,7 +4,7 @@
     "networkMode": "awsvpc",
     "containerDefinitions": [
         {
-            "name": "jenkins",
+            "name": "jenkins-service",
             "image": "797526292966.dkr.ecr.us-east-1.amazonaws.com/testgithubactions:latest",
             "portMappings": [
                 {
