@@ -68,7 +68,7 @@ jobs:
       id: task-def
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
-        task-definition: jenkinstaskdefinition
+        task-definition: ec2-task-definition.json
         container-name: jenkins-container
         image: ${{ steps.build-image.outputs.image }}
 
