@@ -70,7 +70,7 @@ jobs:
       with:
         task-definition: jenkins-task-def
         container-name: jenkins-container
-        image: ${{ steps.build-image.outputs.image }}
+        image: 797526292966.dkr.ecr.us-east-1.amazonaws.com/testgithubactions:latest
 
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
