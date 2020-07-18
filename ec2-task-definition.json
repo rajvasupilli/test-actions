@@ -1,0 +1,24 @@
+{
+    "family": "jenkins-fam",
+    "executionRoleArn": "arn:aws:iam::797526292966:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "containerDefinitions": [
+        {
+            "name": "jenkins",
+            "image": "797526292966.dkr.ecr.us-east-1.amazonaws.com/testgithubactions:latest",
+            "portMappings": [
+                {
+                    "containerPort": 8080,
+                    "hostPort": 80,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "512",
+    "memory": "1024"
+}
