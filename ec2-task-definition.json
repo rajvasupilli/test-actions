@@ -1,11 +1,11 @@
 {
-    "family": "jenkins-family",
-    "executionRoleArn": "arn:aws:iam::797526292966:role/ecsTaskExecutionRole",
+    "family": "ec2-task-definition",
+    "executionRoleArn": "arn:aws:iam::724950795606:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "containerDefinitions": [
         {
-            "name": "jenkins-service",
-            "image": "797526292966.dkr.ecr.us-east-1.amazonaws.com/testgithubactions:latest",
+            "name": "jenkins",
+            "image": "724950795606.dkr.ecr.us-east-1.amazonaws.com/actions:latest",
             "portMappings": [
                 {
                     "containerPort": 8080,
