@@ -68,7 +68,7 @@ jobs:
       id: task-def
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
-        task-definition: ec2-task-definition.json
+        task-definition: jenkins-task-def
         container-name: jenkins-container
         image: ${{ steps.build-image.outputs.image }}
 
@@ -76,6 +76,6 @@ jobs:
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: jenkins
+        service: jenkins-service
         cluster: jenkins-cluster
         wait-for-service-stability: true
