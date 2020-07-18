@@ -1,5 +1,5 @@
 {
-    "family": "jenkins-fam",
+    "family": "jenkins-family",
     "executionRoleArn": "arn:aws:iam::797526292966:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "containerDefinitions": [
