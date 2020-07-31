@@ -13,14 +13,6 @@
                     "protocol": "tcp"
                 }
             ],
-           "logConfiguration": {
-                "logDriver": "awslogs",
-                "options": {
-                    "awslogs-group": "awslogs-ecsservice",
-                    "awslogs-region": "us-east-1",
-                    "awslogs-stream-prefix": "awslogs-ecs"
-                }
-           }
             "essential": true
         }
     ],
