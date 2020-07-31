@@ -1,4 +1,8 @@
-FROM jenkins:latest
-USER root
-RUN apt-get update && apt-get install -y build-essential
-USER jenkins
+#This is a sample Image 
+FROM ubuntu 
+MAINTAINER user@gmail.com 
+
+RUN apt-get update 
+RUN apt-get install -y nginx 
+RUN service nginx start
+CMD [“echo”,”Image created”]
