@@ -1,11 +1,11 @@
 {
-    "family": "sbt-task-definition",
-    "executionRoleArn": "arn:aws:iam::238029455348:role/ecsTaskExecutionRole",
+    "family": "ecs-task-definition",
+    "executionRoleArn": "arn:aws:iam::150773112259:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "containerDefinitions": [
         {
-            "name": "sbt-container",
-            "image": "238029455348.dkr.ecr.us-east-1.amazonaws.com/sbtrepo:latest",
+            "name": "ecs-container",
+            "image": "150773112259.dkr.ecr.us-east-1.amazonaws.com/sbtrepo:latest",
             "portMappings": [
                 {
                     "containerPort": 80,
