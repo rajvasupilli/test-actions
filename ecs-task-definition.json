@@ -1,15 +1,15 @@
 {
     "family": "ecs-task-definition",
-    "executionRoleArn": "arn:aws:iam::238029455348:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::150773112259:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "containerDefinitions": [
         {
             "name": "ecs-container",
-            "image": "238029455348.dkr.ecr.us-east-1.amazonaws.com/sbtrepo:latest",
+            "image": "150773112259.dkr.ecr.us-east-1.amazonaws.com/sbtrepo:latest",
             "portMappings": [
                 {
                     "containerPort": 80,
-                    "hostPort": 9000,
+                    "hostPort": 80,
                     "protocol": "tcp"
                 }
             ],
