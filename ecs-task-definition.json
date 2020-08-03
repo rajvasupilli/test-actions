@@ -5,7 +5,7 @@
     "containerDefinitions": [
         {
             "name": "ecs-container",
-            "image": "150773112259.dkr.ecr.us-east-1.amazonaws.com/sbtrepo:latest",
+            "image": "150773112259.dkr.ecr.us-east-1.amazonaws.com/ecs-repo:latest",
             "portMappings": [
                 {
                     "containerPort": 80,
